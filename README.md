@@ -101,3 +101,61 @@ variable "subnet_cidr_prefix" {
   
 }
 
+##### 4. Statefile:
+Whenever the deployment is finished, terraform creates statefile automatically to keep the track of current state of the infrastructure.
+Which means statefile will have the records of the infrastructure created using terraform. 
+Whenever you want to deploy/destroy the resources, terraform will compare with current statefile.
+A file with a name of terraform.tfstate will be created automatically in our working directory.
+
+##### 5. Provisioners:
+Similar to configuration management tools. Like sheff, ansible, puppet functionalities will be there in provisioners.
+Once we build the infra if you want to run some configurations, we will use provisioners.
+
+provisioner "file" {
+
+source = "./script.ps1"
+
+destination = "C:/temp/setup.ps1"
+
+Connection {
+
+type = "winrm"
+
+user = "Admin"
+
+password = "Welcome123"
+
+host = "server1"
+
+}
+
+}
+
+##### 6. Backends:
+We call it as Terraform Backends or Remote statefile.
+In realtime scenarios, we save the statefile in central location like NFS Share, azure cloud storage, AWS cloud storage.
+We recommend to store the statefiles in shared cloud storages. 
+For that, we need to have a storage account and container.
+
+Most importantly, we need to pass authentication mechanism to terraform.
+
+terraform {
+
+  backend "azurerm" {
+  
+    access_key           = "abcdefghijklmnopqrstuvwxyz0123456789..."
+    
+    storage_account_name = "abcd1234"
+    
+    container_name       = "tfstate"
+    
+    key                  = "prod.terraform.tfstate"
+    
+  }
+  
+}
+
+Accesskey will be available in our container.
+
+
+
