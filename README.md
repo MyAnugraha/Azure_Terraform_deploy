@@ -196,5 +196,18 @@ location = "existing rg location"
 
 Note: If you destroy the deployment, it will delete the new resources created but will not delete the existing resources we defined to terraform.
 
-
+##### 9. Locals or Local Values:
+To make our code simple we use locals concept. It reduces the complexity in the code. 
    
+data "azurerm_resource_group" "rg1" {
+
+  name     = "NextOpsVideos"
+  
+}
+
+locals {
+
+  rg_info = data.azurerm_resource_group.rg1
+  
+}
+
