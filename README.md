@@ -194,5 +194,7 @@ location = "existing rg location"
 
 }
 
+Note: If you destroy the deployment, it will delete the new resources created but will not delete the existing resources we defined to terraform.
+
 
    
