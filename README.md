@@ -180,7 +180,7 @@ module "module_dev" {
 If I want to modify/destroy specific environment, you can use target component.
 Ex: terraform destroy --target=module.module_prod
 
-##### 8. Date Sources:
+##### 8. Data Sources:
 If you want to deploy a new azure resource using terraform with existing resource available which is not created using actual terraform code.
 Using "data" component we can define a existing resource.
 Ex: if you have resource group in azure which is not created with terraform code, I want to tell terraform that there is existing rg in azure portal.
