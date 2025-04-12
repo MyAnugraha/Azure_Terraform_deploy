@@ -157,5 +157,27 @@ terraform {
 
 Accesskey will be available in our container.
 
+##### 7. Modules:
+We can create multiple environments in a very easy way.
+Using Modules component we can pass the key vaules to our main deployment.
+
+module "module_dev" {
+
+    source = "./modules"
+    
+    prefix = "dev"
+    
+    vnet_cidr_prefix = "10.20.0.0/16"
+    
+    subnet1_cidr_prefix = "10.20.1.0/24"
+    
+    rgname = "DevRG" 
+    
+    subnet = "DevSubnet"  
+    
+}
+
+If I want to modify/destroy specific environment, you can use target component.
+Ex: terraform destroy --target=module.module_prod
 
 
