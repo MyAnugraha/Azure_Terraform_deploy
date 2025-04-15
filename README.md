@@ -222,3 +222,8 @@ With data sources we are using existing resources details to create more resourc
 So clearly we are not adding existing resources to our statefile.
 Whereas, Import is adding the existing resources to our statefile.
 
+##### 11. Terraform Functions: This helps to simplify the code. 
+Function is nothing but reusable code. If someone defined a function, we need not to write that code language again.
+We can reuse that function. 
+Ex: If there is calculator is program, division, multiply, addition, substraction are functions.
+Likewise there are built-in functions in terraform.
