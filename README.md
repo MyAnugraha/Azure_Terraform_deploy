@@ -211,4 +211,8 @@ locals {
   
 }
 
-##### 10. Import:
+##### 10. Import: What is Terraform Import? How to import existing resources into statefile
+terraform import command will import the existing resource to statefile.
+Here we need to define the existing resource details in Visual studio and then run the terraform import.
+
+terraform import azurerm_resource_group.existing_rg "resourceID of the the rg of existing azure resource" 
