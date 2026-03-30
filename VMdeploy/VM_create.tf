@@ -18,11 +18,6 @@ terraform {
 provider "azurerm" {
   features {}
 
-  subscription_id    = "90971351-75aa-4891-9e97-856804f03ada"
-  client_id          = "f8518918-e301-4003-8537-b4661cca9727"
-  client_secret      = "XmE8Q~hXVXed2RZJW-rbFO9qkAOxv9qExGi2Uabk1"
-  tenant_id          = "e57b82e9-8c2f-423b-b7ee-cff111bc131a"
-
 }
 
 # What is Resources?
