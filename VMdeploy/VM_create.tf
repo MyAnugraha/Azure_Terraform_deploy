@@ -6,6 +6,13 @@
 # Provider is an interaction between terraform application and the respective infra service
 
 terraform {
+backend "azurerm" {
+    resource_group_name  = "cloud-shell-storage-centralindia"      # The Resource Group of your Storage Account
+    storage_account_name = "csg100320035a843986"                   # Your actual Storage Account name
+    container_name       = "tfstate"                               # The container inside the Storage Account
+    key                  = "terraform.tfstate"                     # The name of the state file
+  }
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
